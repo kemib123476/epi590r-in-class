@@ -58,6 +58,19 @@ print(stats)
 2.  The mean number of hours was `r mean(nlsy$sleep_wknd, na.rm=TRUE)`
 
 ```{r}
+
+stats <- median(nlsy$sleep_wknd, na.rm=TRUE)
+
+print(stats)
+
+```
+1. There were `r stats` participants
+
+2.  The median number of hours was `r median(nlsy$sleep_wknd, na.rm=TRUE)`
+
+
+
+```{r}
 #| label: tbl-one
 #| tbl-cap: "This is a great table"
  knitr::kable(mtcars)
