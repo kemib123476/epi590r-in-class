@@ -57,3 +57,33 @@ tbl_summary(
 	modify_footnote(update = everything() ~ NA) |>
 	modify_header(label = "**Variable**", p.value = "**P**")
 
+#Exercise 1.6
+
+#helper function helps we choose both at once#
+
+tbl_summary(
+	nlsy,
+include = c(region_cat, race_eth_cat,
+						income, starts_with("sleep")))
+
+#2 & 3#
+
+tbl_summary(
+	nlsy,
+	by = sex_cat,
+	include = c(region_cat, race_eth_cat,
+							income, starts_with("sleep")
+),
+label = list(
+	race_eth_cat ~ "Race/ethinicity"
+),
+statistic = list(
+	income ~ "[p10}; {p90}",
+	startsWith("sleep") ~ "{min}; {max}"
+),
+digits = list(
+	income ~ 3,
+	starts_with("sleep") ~1
+))
+
+
